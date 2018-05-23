@@ -40,7 +40,7 @@ if machine_is Darwin
 then
   VIEWER="open -f -a Preview"
 else
-  VIEWER="vi"
+  VIEWER="display"
 fi
 
 #define the flags to be used
