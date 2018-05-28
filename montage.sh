@@ -1,4 +1,4 @@
-#!/bin/bash -ux
+#!/bin/bash -u
 
 function machine_is
 {
@@ -40,7 +40,7 @@ if machine_is Darwin
 then
   VIEWER="open -f -a Preview"
 else
-  VIEWER="display"
+  VIEWER="display "
 fi
 
 #define the flags to be used
@@ -49,6 +49,6 @@ FLAGS=
 #delete any pre-define geometry parameters
 FLAGS+="-geometry +1+1 "
 #add filenames as labels
-FLAGS+="-label %d/%t $@ -pointsize 48 "
+FLAGS+="-label %d/%t $@ -pointsize 12 "
 
 montage $FLAGS png:- | $VIEWER
